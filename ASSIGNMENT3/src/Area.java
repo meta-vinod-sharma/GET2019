@@ -12,7 +12,7 @@ public class Area {
 	 * @param height  Height of Triangle
 	 * @return        Returns Area of Triangle
 	 */
-	public double areaTriangle( double width, double height){
+	public double areaTriangle( double width, double height) throws Exception{
 		double constant = 0.5;
 		double areaOfTriangle = constant * width * height;
 		return areaOfTriangle;
@@ -23,7 +23,7 @@ public class Area {
 	 * @param height   Height of Rectangle
 	 * @return         Returns Area of Rectangle
 	 */
-	public double areaRectangle( double width, double height){
+	public double areaRectangle( double width, double height) throws Exception{
 		double areaOfRectangle = width * height;
 		return areaOfRectangle;
 	}
@@ -33,7 +33,7 @@ public class Area {
 	 * @param width  width of Square
 	 * @return  returns area of square
 	 */
-	public double areaSquare( double width){
+	public double areaSquare( double width) throws Exception{
 		double areaOfSquare =  width * width;
 		return areaOfSquare;
 	}
@@ -43,13 +43,13 @@ public class Area {
 	 * @param radius  radious of Circle 
 	 * @return      Returns Area of Circle
 	 */
-	public double areaCircle( double radius){
+	public double areaCircle( double radius) throws Exception{
 		double constant = 3.14;
 		double areaOfCircle = constant * radius * radius;
 		return areaOfCircle;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		Area areaObj = new Area();
 		double width,height,radius;
