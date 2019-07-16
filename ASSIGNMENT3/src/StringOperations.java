@@ -15,7 +15,7 @@ public class StringOperations {
 	 * @param str2
 	 * @return  0 for different string and 1 for same string
 	 */
-	public int compareString(String str1, String str2) {
+	public int compareString(String str1, String str2) throws Exception {
 
 		if (str1.length() != str2.length())
 			return 0;
@@ -32,7 +32,7 @@ public class StringOperations {
 	 * @param str
 	 * @return reversed String
 	 */
-	public String reverse(String str) {
+	public String reverse(String str) throws Exception{
 		String reverse = "";
 		for (int i = str.length() - 1; i >= 0; i--) {
 			reverse = reverse + str.charAt(i);
@@ -44,7 +44,7 @@ public class StringOperations {
 	 * @param str
 	 * @return  String with exchange case of characters(upper to lower case and lower case into upper case)
 	 */
-	public String changeCaseOfCharacter(String str) {
+	public String changeCaseOfCharacter(String str) throws Exception{
 		String reverseCase = "";
 		for (int i = 0; i < string.length(); i++) {
 			if (65 <= string.charAt(i) && string.charAt(i) <= 90)
@@ -62,7 +62,7 @@ public class StringOperations {
 	 * @param str
 	 * @return Return the largest word of a string, If two words are of same length then return last word
 	 */
-	public String largestWord(String str) {
+	public String largestWord(String str) throws Exception{
 
 		String str1 = "";
 		int count = 0, maxLen = 0;
@@ -91,7 +91,7 @@ public class StringOperations {
 		return str1;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		
 		StringOperations so = new StringOperations();
 		String str1, str2;
