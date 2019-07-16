@@ -42,11 +42,10 @@ public class StringOperations {
 
 	/**
 	 * @param str
-	 * @return reversed String with exchange case of characters(upper to lower case and lower case into upper case)
+	 * @return  String with exchange case of characters(upper to lower case and lower case into upper case)
 	 */
-	public String reverseWithCase(String str) {
+	public String changeCaseOfCharacter(String str) {
 		String reverseCase = "";
-		String string = reverse(str);
 		for (int i = 0; i < string.length(); i++) {
 			if (65 <= string.charAt(i) && string.charAt(i) <= 90)
 				reverseCase += (char) (string.charAt(i) + 32);
@@ -118,12 +117,12 @@ public class StringOperations {
 				str1 = sc1.nextLine();
 				System.out.println(so.reverse(str1));
 				break;
-            //Reverse String with Case conversion (upper to lower case and lower case into upper case)
+                  // String with Case conversion (upper to lower case and lower case into upper case)
 			case 3:
 				Scanner sc2 = new Scanner(System.in);
 				System.out.println("Enter a String");
 				str1 = sc2.nextLine();
-				System.out.println(so.reverseWithCase(str1));
+				System.out.println(so.changeCaseOfCharacter(str1));
 				break;
 			// print largest word in String
 			case 4:
