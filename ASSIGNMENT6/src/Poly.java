@@ -18,8 +18,8 @@ public final class Poly {
 	}
 
 	/* This method evaluated polynomial.
-	 * @param value of variable.
-	 * @return evaluated expression with given value.
+	 * @param          //value of variable.
+	 * @return        //evaluated expression with given value.
 	 */
 	public float evaluate(float value) {
 		Poly polyObj = this;
@@ -32,7 +32,7 @@ public final class Poly {
 	}
 
 	/* This method is used to find degree of a polynomial.
-	 * @return degree of given polynomial expression.
+	 * @return        //degree of given polynomial expression.
 	 */
 	public int degree() {
 		int array[] = this.expression;
@@ -45,9 +45,9 @@ public final class Poly {
 	}
 
 	/* This method is used to add two polynomial expressions. 
-	 * @param poly1 polynomial expression.
-	 * @param poly2 polynomial expression.
-	 * @return added polynomial expression
+	 * @param poly1    //polynomial expression.
+	 * @param poly2    //polynomial expression.
+	 * @return       //added  polynomial expression
 	 */
 	public static Poly addPoly(Poly poly1, Poly poly2) {
 		int arrayP1[] = poly1.expression;
@@ -93,9 +93,9 @@ public final class Poly {
 	}
 
 	/* This method is used to multiply two polynomial expressions. 
-	 * @param poly1 polynomial expression
-	 * @param poly2 polynomial expression
-	 * @return multiplied polynomial expression
+	 * @param poly1     //polynomial expression
+	 * @param poly2     // polynomial expression
+	 * @return          //multiplied polynomial expression
 	 */
 	public static Poly multiplyPoly(Poly poly1, Poly poly2) {
 		int arrayP1[] = poly1.expression;
@@ -115,8 +115,8 @@ public final class Poly {
 
 	
 	/* This method is used to convert List to Array of integers.
-	 * @param l ArrayList.
-	 * @return integer array.
+	 * @param list        // ArrayList.
+	 * @return          // integer array.
 	 */
 	private static int[] listToArray(List<Integer> list) {
 		int array[] = new int[list.size()];
