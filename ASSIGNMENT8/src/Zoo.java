@@ -33,17 +33,21 @@ public class Zoo {
 			switch (userInput) {
 			case 1: {
 				if (ZoneArea.size() < 2) {
-					System.out.println(ZoneArea.size());
+					System.out.println("You can add 3 types of Zones\nMammal\nReptile\nBird");
+					System.out.println("Numbers of zones currently available = "+ZoneArea.size());
+					for(int i = 0; i < ZoneArea.size(); i++){
+						System.out.println((i + 1)+" "+ZoneArea.get(i));
+					}
 					System.out.println("Enter Catergory of Zone");
 					sc.nextLine();
 					String Category = sc.nextLine();
 					System.out.println("Enter Cage Capacity of Zone");
 					int cageCapacity = sc.nextInt();
-					System.out.println("is zone has park");
+					System.out.println("is zone has park(true or false)");
 					boolean park = sc.nextBoolean();
-					System.out.println("is zone has canteen");
+					System.out.println("is zone has canteen(true or false)");
 					boolean canteen = sc.nextBoolean();
-					System.out.println("is zone has washroom");
+					System.out.println("is zone has washroom(true or false)");
 					boolean washroom = sc.nextBoolean();
 					switch (Category) {
 					case "Mammal": {
@@ -75,6 +79,11 @@ public class Zoo {
 				if (ZoneArea.size() == 0) {
 					System.out.println("Please Create Zone");
 				} else {
+					System.out.println("You can add these types of Cages \nLion\nCrocodile\nPeacock\n");
+					System.out.println("Numbers of cages currently available = "+CageArea.size());
+					for(int i = 0; i < CageArea.size(); i++){
+						System.out.println((i + 1)+" "+CageArea.get(i));
+					}
 					System.out.println("Enter Type of Cage");
 					sc.nextLine();
 					String cageType = sc.nextLine();
@@ -104,37 +113,39 @@ public class Zoo {
 			}
 
 			case 3:
-				if (ZoneArea.size() == 0) {
-					System.out.println("Please Create Zone");
-				} else if (CageArea.size() == 0) {
-					System.out.println("Please Create Cage");
-				} else {
-					System.out.println("Enter Type of Animal");
-					sc.nextLine();
-					String animalType = sc.nextLine();
-					System.out.println("Enter NAme of Animal");
-					String animalName = sc.nextLine();
-					int count = 0;
-					for (int i = 0; i < CageArea.size(); i++) {
+				if(ZoneArea.size() == 0){
+		    		System.out.println("Please Create Zone");
+		    	}
+		    	else if(CageArea.size() == 0){
+		    		System.out.println("Please Create Cage");
+		    	}
+		    	else{
+		    		System.out.println("Enter Type of Animal");
+		    		sc.nextLine();
+			    	String animalType =sc.nextLine();
+			    	System.out.println("Enter NAme of Animal");
+			    	String animalName =sc.nextLine();
+			    	System.out.println("Enter Weight of Animal");
+					double animalWeight = sc.nextDouble();
+					System.out.println("Enter Age of Animal");
+					int animalAge = sc.nextInt();
+			    	for (int i = 0; i < CageArea.size(); i++) {
 						Cage CageObj = CageArea.get(i);
-						
-						if (animalType.equals(CageObj.cageType)) {
-							if (CageObj.Aniamlcapacity > 0) {
-								CageObj.Aniamlcapacity = CageObj.Aniamlcapacity - 1;
-								Animal A1 = addAnimal(id++, animalName,
-										animalType);
+						if(animalType.equals(CageObj.cageType)){
+							if(CageObj.Aniamlcapacity >0){
+								CageObj.Aniamlcapacity = CageObj.Aniamlcapacity-1;
+								Animal A1 = addAnimal(++id,animalName,animalType, animalWeight, animalAge);
 								AnimalArea.add(A1);
-							} else {
+							}else{
 								System.out.println("Capacity full");
 							}
 						}
-						count++;
+						else{
+							System.out.println("Enter "+animalType+" type of cage");
+						}
 					}
-					if(count == CageArea.size()){
-						System.out.println("Create "+animalType+" Cage \n");
-					}
-				}
-				break;
+		    	}
+		    	break;
 			case 4:
 				sc.nextLine();
 				System.out.println("Enter Name of Animal");
@@ -157,6 +168,9 @@ public class Zoo {
 						System.out.println("\nName of Animal->" + A1.name);
 						System.out.println("\nId of Animal->" + A1.id);
 						System.out.println("\nSound Of Animal->" + A1.getSound());
+						System.out.println("\nWeight of Animal->" + A1.weight);
+						System.out.println("\nAge Of Animal->" + A1.age);
+						System.out.println();
 					} else {
 						System.out.println("Animal Not Found");
 					}
@@ -219,14 +233,13 @@ public class Zoo {
 	 * @param Type
 	 * @return
 	 */
-	public static Animal addAnimal(int Id, String Name, String Type) {
+	public static Animal addAnimal(int Id, String Name, String Type, double weight, int age) {
 		if ("Lion".equals(Type)) {
-
-			return new Lion(Id, Name);
+			return new Lion(Id, Name, weight, age);
 		} else if ("Crocodile".equals(Type)) {
-			return new Crocodile(Id, Name);
+			return new Crocodile(Id, Name, weight, age);
 		} else if ("Peacock".equals(Type)) {
-			return new Peacock(Id, Name);
+			return new Peacock(Id, Name, weight, age);
 		} else {
 
 			System.out.println("No Animal Found");
