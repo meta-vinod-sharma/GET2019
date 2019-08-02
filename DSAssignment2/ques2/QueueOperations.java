@@ -1,10 +1,19 @@
 package ques2;
 
+/**
+ * @author Vinod
+ *
+ *class QueueOperations contains method addElementToQueue ,deQueue, emptyQueue and fullQueue and show the circular queue.
+ */
 public class QueueOperations implements Queue {
 
 	int queue[];
 	int size, front, rear;
 
+	/**
+	 * constructor to initilize front,rear and queue
+	 * @param size  // size of queue
+	 */
 	public QueueOperations(int size) {
 		this.front = -1;
 		this.rear = -1;
@@ -12,6 +21,11 @@ public class QueueOperations implements Queue {
 		queue = new int[size];
 	}
 
+	
+	/* (non-Javadoc)
+	 * @see ques2.Queue#addElementToQueue(int)
+	 * @param data   insert data to queue
+	 */
 	@Override
 	public boolean addElementToQueue(int data) {
 		if (fullQueue()) {
@@ -35,6 +49,9 @@ public class QueueOperations implements Queue {
 
 	}
 
+	/* 
+	 * this method delete the top element
+	 */
 	@Override
 	public boolean deQueue() {
 		if (emptyQueue()) {
@@ -53,6 +70,9 @@ public class QueueOperations implements Queue {
 		return true;
 	}
 
+	/* 
+	 * this emptyQueue method returns true if queue is empty else false 
+	 */
 	@Override
 	public boolean emptyQueue() {
 		if (front == -1) {
@@ -61,6 +81,9 @@ public class QueueOperations implements Queue {
 		return false;
 
 	}
+	/* 
+	 * this emptyQueue method returns true if queue is full else false 
+	 */
 
 	@Override
 	public boolean fullQueue() {
@@ -69,6 +92,9 @@ public class QueueOperations implements Queue {
 		return false;
 	}
 
+	/*
+	 * this show method shows elements of queue
+	 */
 	public void show() {
 		if (front == -1) {
 			System.out.println("\nQueue is Empty");
