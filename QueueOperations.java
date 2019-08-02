@@ -1,5 +1,7 @@
 package ques2;
 
+import java.util.ArrayList;
+
 /**
  * @author Vinod
  *
@@ -9,7 +11,7 @@ package ques2;
 public class QueueOperations implements Queue {
 
 	int queue[];
-	int queue1[];
+        ArrayList<Integer> list = new ArrayList<Integer>();
 	int size, front, rear;
 
 	/**
@@ -108,18 +110,25 @@ public class QueueOperations implements Queue {
 		}
 		if (rear >= front) {
 			for (int i = front; i <= rear; i++) {
+				list.add(queue[i]);
 				System.out.println("-->" + queue[i]);
 			}
 		} else {
 			for (int i = front; i < size; i++) {
+				list.add(queue[i]);
 				System.out.println("-->" + queue[i]);
 			}
 
 			for (int i = 0; i <= rear; i++) {
+				list.add(queue[i]);
 				System.out.println("-->" + queue[i]);
 			}
 		}
-		return queue;
+		int arr[] = new int[list.size()];
+		for(int i = 0; i < list.size(); i++){
+			arr[i] = list.get(i);
+		}
+		return arr;
 	}
 
 }
