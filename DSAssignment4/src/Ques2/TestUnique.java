@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestUnique {
 	@Test
 	public void testCount1() {
-		String input = "IINNNAVVYY";
+		String input = "IINNNAVddd";
 		CountUnique count = new CountUnique();
 		int result = count.count(input);
 		int expectedData = 1;
@@ -15,8 +15,8 @@ public class TestUnique {
 
 	@Test
 	public void testCount2() {
-		String input = "VINAY";
-		String input2 = "VINAY";
+		String input = "VINod";
+		String input2 = "VINod";
 		CountUnique count = new CountUnique();
 		count.count(input);
 		int result = count.count(input2);
