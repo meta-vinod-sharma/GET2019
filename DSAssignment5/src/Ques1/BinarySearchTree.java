@@ -67,11 +67,11 @@ public class BinarySearchTree implements Dictionary {
 		if (root == null)
 			return null;
 		else if (key < root.key) {
-			flag = 0;
+			
 			root.left = delete(root.left, key);
 		}
 		else if (key > root.key) {
-			flag = 1;
+			
 			root.right = delete(root.right, key);
 		}
 		else {
