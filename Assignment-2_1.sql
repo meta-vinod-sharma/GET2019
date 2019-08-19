@@ -4,8 +4,8 @@
  * Assignments. (Write all CREATE commands in a SQL file and run that SQL File). 
  */
 -- Inserting into user table
-INSERT INTO user VALUES ("bk9929@gmail.com","Bhupendra Kumawat",'1996-05-07',08852060530);
 INSERT INTO user VALUES ("vinodSharma@gmail.com","VInod Sharma",'1996-05-02',9785226344);
+INSERT INTO user VALUES ("bk9929@gmail.com","Bhupendra Kumawat",'1996-05-07',8852060530);
 INSERT INTO user VALUES ("vinayPancholi@gmail.com","Vinay Pancholi",'1996-05-18',9785666666);
 INSERT INTO user VALUES ("AvneetDhaliwalmps@gmail.com","Avneet Kaur",'1998-12-29',7232821414);
 
@@ -74,10 +74,21 @@ SHOW TABLES;
 
 -- Query#3 : Write a command to remove  Product  table of the StoreFront database.
 SAVEPOINT sp1;
+Set FOREIGN_KEY_CHECKS = 0;
+
 DROP TABLE products;
 
--- Query#4 : Create the  Product  table again.
-ROLLBACK TO sp1;
+
+
+-- Query#4 : Create the  Products  table again.
+CREATE TABLE products (
+p_id INT PRIMARY KEY,
+p_Name VARCHAR(30) NOT NULL,
+p_Price DECIMAL(7,2) NOT NULL,
+availability BOOLEAN NOT NULL
+);
+Set FOREIGN_KEY_CHECKS = 1;
+
 
 -- Extra Queries.
 SELECT * from products;
