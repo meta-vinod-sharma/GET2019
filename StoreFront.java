@@ -105,13 +105,11 @@ public class StoreFront {
 	 */
 	public	int deleteProducts() {
 		int affectedRows = 0;
-		String query = "DELETE "
-				+ "FROM products "
-				+ "WHERE p_id NOT IN "
-				+ "(SELECT DISTINCT product_id "
-				+ "FROM order_items oi "
-				+ "LEFT JOIN orders o ON oi.order_id = o.order_id "
-				+ "WHERE TIMESTAMPDIFF(YEAR, o.order_timestamp, CURRENT_TIMESTAMP) < 1);";
+		String query = "DELETE from products "
+				+ "WHERE p_id not in "
+				+ "( select product_id from order_items "
+				+ "left join orders on order_items.order_id = orders.Order_id "
+				+ " AND TIMESTAMPDIFF(year,orders.order_timestamp, CURRENT_TIMESTAMP) < 1 )";
 		try {
 			affectedRows = stmt.executeUpdate(query);
 			cn.commit();
