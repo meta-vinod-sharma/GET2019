@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Metacube Parking System</title>
+</head>
+<script src="main.js">
+</script>
+
+<body>
+    <br>
+    <div id="employeeReg" align="center">
+        <h2>Employee Registration Form</h2>
+        <form action="" method="POST" >
+            <input id='fullname' type='text' placeholder="Full Name" name="Full Name" size=40%>
+            <br><label id="fullname-error" size=40%></label><br>
+            <label>Gender : </label>
+            <label>
+                <input type='radio' name='Gender' value="Male" checked>
+                Male </label>
+            <label><input type='radio' name='Gender' value="Female">
+                Female
+            </label><br><br>
+            <input id='email' type='email' placeholder="Email@xyz.com" name="email" size=40%>
+            <br><label id="email-error" size=40%></label><br><br>
+            <input id='password' type='password' placeholder="Password" name="password" size=40%><br><br>
+            <input id='confirmpassword' type='password' placeholder="Confirm password" name="password" size=40%>
+            <br><label id="password-error" size=40%></label><br><br>
+            <input id="contactnumber" type="text" placeholder="Contact Number" name="contactnumber" size=40%>
+            <br><label id="contactnumber-error" size=40%></label><br><br>
+            <input type="submit" name="Submit" onclick="registerEmployee()">
+        </form>
+        <br>
+        <br>
+    </div>
+
+    <div id="vehicleReg" align="center" >
+            <h2>Vehicle Registration Form</h2>
+        <form action="" method="GET">
+            <input id='name' type='text' placeholder="Name" name="Name" size=40%><br><br>
+            <label> Type :
+                <select id="vehicletype" name="vehicletype">
+                    <option value="Cycle" default>Cycle</option>
+                    <option value="Motor Cycle">Motor Cycle</option>
+                    <option value="Four Wheeler">Four Wheeler</option>
+                </select>
+            </label>
+            <br></br>
+            <input id="vehicleno" type='text' placeholder="Vehicle Number" size=40%>
+            <br><br>
+            <input id="employeeid" type='text' placeholder="Employee Id" size=40%>
+            <br><br>
+            <textarea id="identification" type='textArea' placeholder="Identification" rows="2" cols="42"></textarea>
+            <br><br>
+            <button type="submit" onclick="registerVehicle()">Register</button>
+        </form>
+    </div>
+
+    <div id="planSelection" align="center" >
+        <form>
+            <H3>Select a plan.</H3>
+            <div> Currency :
+                <label> 
+                    <select id="currency" name="currency" onchange="changeCurrency()">
+                        <option value="" selected>Select currency</option>
+                        <option value="USD" >USD</option>
+                        <option value="INR">INR</option>
+                        <option value="JPY">JPY</option>
+                    </select>
+                </label>
+                <div  id = "showCharges">
+            </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
