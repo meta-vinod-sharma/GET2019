@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Student</title>
+    </head>
+    <body>
+            <div id = searchStudent align = "center">
+                    <form action="searchStudentServletByName" method = "get"> 
+                          <h3>Search student by Name</h3>
+                        <label>First Name : <input type = "text" name="firstName" id="firstName" placeholder="Enter First Name" pattern="[A-Za-z]*" required> </label><br><br>
+                        <label>Last Name : <input type = "text" name="lastName" id="lastName" placeholder="Enter last Name" pattern="[A-Za-z]*" required> </label><br><br>
+                       <input name='search' value='search' type = 'submit'>
+                    </form>
+                    
+                    <form action="/SearchStudentByClass" method = "get">
+                        <h3>Search student by Class</h3>
+                        <input name='class' placeHolder='class' type='number' min = "1" max = "12" ><br><br> 
+                        <input name='search' value='search' type = 'submit'><br><br>
+                    </form>
+        
+                </div>
+    </body>
+</html>
+
