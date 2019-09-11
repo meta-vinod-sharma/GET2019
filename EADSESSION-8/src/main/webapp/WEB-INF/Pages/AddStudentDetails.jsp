@@ -12,7 +12,7 @@
     <h1 align = "center">Student Registration Form</h1>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/js/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <title>Sign Up</title>
+    <title>Student Registration Form</title>
   </head>
   <body>
   
