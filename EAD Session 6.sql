@@ -1,0 +1,30 @@
+DROP DATABASE library;
+CREATE DATABASE library;
+
+USE library;
+CREATE TABLE Book(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    TITLE VARCHAR(30) unique,
+    WRITER VARCHAR(30),
+    PUBLISHER VARCHAR(30),
+    PUBLISHED_YEAR INT
+);
+INSERT INTO BOOK(TITLE,WRITER,PUBLISHER,PUBLISHED_YEAR) VALUES ('My History','Vinod','Vinod',2019);
+INSERT INTO BOOK(TITLE,WRITER,PUBLISHER,PUBLISHED_YEAR) VALUES ('My Life','Vinay','Vinay',1919);
+
+INSERT INTO BOOK(TITLE,WRITER,PUBLISHER,PUBLISHED_YEAR) VALUES ('My Love Life','Vinod','Vinod',2025);
+
+INSERT INTO BOOK(TITLE,WRITER,PUBLISHER,PUBLISHED_YEAR) VALUES ('Black Dog','Vinod','Vinod',2019);
+
+select * from book;
+
+
+
+CREATE DATABASE Inventory_System;
+USE Inventory_System;
+
+CREATE TABLE Inventory ( id INT AUTO_INCREMENT PRIMARY KEY,
+           name VARCHAR(20) NOT NULL UNIQUE,
+           quantity INT NOT NULL);
+            
+INSERT INTO Inventory(name , quantity) VALUES("Apple" , 100) , ("Mango" , "200") , ("grapes" , 300)
