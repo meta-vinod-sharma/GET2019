@@ -1,0 +1,46 @@
+<div class = "container">
+<div class = "row">
+    <div class = "col-3">
+        <ul class="nav nav-pills flex-column border rounded m-4">
+            <li class="nav-item border-bottom">
+                    <a (click) = "getItems('All')"  [routerLink] = "['/all-items', 'All']" class="nav-link" routerLinkActive = "active">All Categories </a>
+            </li>
+            <li class="nav-item border-bottom">
+                    <a (click) = "getItems('Bread')" [routerLink] = "['/all-items', 'Bread']" class="nav-link " routerLinkActive = "active" >Bread</a>
+            </li>
+            <li class="nav-item border-bottom">
+                <a (click) = "getItems('Dairy')" [routerLink]  = "['/all-items', 'Dairy']" class="nav-link " routerLinkActive = "active" >Dairy</a> 
+            </li>
+            <li class="nav-item border-bottom ">
+                    <a (click) = "getItems('Fruits')" [routerLink] = "['/all-items', 'Fruits']" class="nav-link " routerLinkActive = "active">Fruits</a> 
+            </li>
+            <li class="nav-item border-bottom">
+                    <a (click) = "getItems('Vegetables')"[routerLink] = "['/all-items', 'Vegetables']" class="nav-link " routerLinkActive = "active" >Vegetables</a> 
+                </li>
+            <li class="nav-item ">
+                    <a (click) = "getItems('Seasoning and Spices')" [routerLink] = "['/all-items', 'Seasoning and Spices']"class="nav-link " routerLinkActive = "active" >Seasoning and Spices</a> 
+            </li>
+        </ul>
+    </div>
+    <div class = "col-9"> 
+        <div class = "row">
+            <div *ngFor = "let item of itemsArr" class = "col-sm-5 m-4"> 
+                <div class = "card h-100">
+                    <img class="card-img-top" src="assets/{{item.imageUrl}}"  height = "200px" alt="Card image cap">
+                    <div class = "card-body">
+                        <h4 class= "card-title">{{item.title}}</h4>
+                        <p class = "text-muted card-text">${{item.price}}</p>
+                    </div>
+                    <button *ngIf = "!item.quantity" type = "button" class = "btn btn-secondary" (click) = "AddToCart(item.id)">Add to Cart</button>
+                    <span class = "cart">
+                    <button *ngIf = "item.quantity" type = "button" class = "btn btn-secondary" (click) = "decrementItem(item.id)">-</button>
+                    <p *ngIf = "item.quantity" style="width : 90%; text-align : center; padding-top : 3%"> {{item.quantity}} in cart </p>
+                    <button *ngIf = "item.quantity" type = "button" class = "btn btn-secondary " (click) = "incrementItem(item.id)">+</button>
+                    </span>
+           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
