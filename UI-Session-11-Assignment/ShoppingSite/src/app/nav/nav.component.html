@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm ">
+    <div class = "container-fluid border-bottom">
+        <div class = "col-md-6 my-2">
+            <a class = "mr-4 text-dark"  [routerLink] = "['/all-items', 'All']" routerLinkActive = "active"><i class="fas fa-leaf"></i></a>
+            <a class = "my-2 text-dark" routerLink = '/cart'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <div class = "col-md-6 d-flex justify-content-end my-2">
+            <div class = "dropdown">
+                <button class ="dropdown-toggle btn-sm bg-transparent text-muted border-none" data-toggle = "dropdown">John Doe
+                </button>
+                <ul class = "dropdown-menu">
+                    <li><a class = "dropdown-item" href = "#" routerLink = "/orders">My Orders</a></li>
+                    <li><a class = "dropdown-item" href = "#">Log Out</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+        
+            
+                
